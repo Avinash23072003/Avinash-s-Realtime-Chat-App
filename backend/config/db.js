@@ -7,10 +7,7 @@ const colors = require("colors");
 const connectDB = async () => {
   try {
     // Attempt to connect to MongoDB
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGO_URI)
 
     // Log successful connection
     console.log(colors.green.bold(`MongoDB Connected: ${conn.connection.host}`));
